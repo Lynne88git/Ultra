@@ -7,16 +7,20 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix",
-    "format": "prettier src/**/*.ts --write"
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "eslint": "node_modules/.bin/eslint src/"
   },
   "husky": {
     "hooks": {
       "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
       "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
       "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-commit": "echo \"[Husky] pre-commit\""
+      "pre-commit": "prettier --write . && git add -A ."
     }
+  },
+  "lint-staged": {
+    "*": "prettier --write"
   },
   "private": true,
   "dependencies": {
@@ -30,8 +34,10 @@
     "@angular/router": "~13.0.0",
     "bootstrap": "^4.6.1",
     "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
+    "tslint-plugin-prettier": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
