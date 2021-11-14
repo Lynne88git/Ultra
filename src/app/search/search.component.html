@@ -1,7 +1,7 @@
-<section>
+<section class="col-md-12">
     <form [formGroup]="searchForm">
         <label>
-            <input type="text" (keyup)="searchTerm.next($event)" formControlName="search" placeholder="Search repos..."/>
+            <input class="w-100 text-center" type="text" (keyup)="searchTerm.next($event)" formControlName="search" placeholder="Type your search"/>
             <div *ngIf="loading">
                 <p class="search-message">Searching</p>
                 <div class="lds-ellipsis">
@@ -13,17 +13,16 @@
 
     <div *ngIf="searchResults">
         <div class="results">
-            <div class="repo" *ngFor="let result of paginationElements | paginate: {itemsPerPage: 6, currentPage: page}">
-                <div>
-                    <img loading="lazy" [attr.src]="result.owner.avatar_url"
+            <div class="repo" *ngFor="let result of paginationElements | paginate: {itemsPerPage: 9, currentPage: page}">
+                <div class="container">
+                    <div class="row">
+                    <img class="p-2" loading="lazy" [attr.src]="result.images.original.url"
                     width="200"
                     height="auto"
-                    alt="avatar"
+                    alt="{{result.title}}"
                     />
-                    <h2><a href="{{result.clone_url}}" target="_blank">{{result.full_name}}</a></h2>
-                    <p><strong>{{result.owner.login}}</strong></p>
-                    <p>Forks: {{result.forks_count}}</p>
-                    <p>Issues: {{result.open_issues_count}}</p>
+                    <p class="titleHeading">{{result.title}}</p>
+                </div>
                 </div>
             </div>
         </div>

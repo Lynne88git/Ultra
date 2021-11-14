@@ -8,7 +8,7 @@ import { map } from "rxjs/operators";
 })
 export class SearchService {
 
-  public baseUrl = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC";
+  public baseUrl = "http://api.giphy.com/v1/gifs/search?api_key=Z9S507rSalhPEtvsnMrv5dOtTxSoE0Yu";
   public searchResults: any;
 
   constructor(private httpClient: HttpClient) { }
@@ -27,7 +27,7 @@ export class SearchService {
       return this.httpClient.get(this.baseUrl, {params}).pipe(
         map(response => {
           console.log(response);
-          return this.searchResults = { response:["items"] };
+          return this.searchResults = response["data"];
         })
       );
     }

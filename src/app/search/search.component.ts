@@ -43,7 +43,7 @@ export class SearchComponent implements OnInit {
         return throwError(e);
       }),
     ).subscribe( v => {
-      this.loading = true;
+      this.loading = false;
       this.searchResults = v;
       this.paginationElements = this.searchResults;
     })
