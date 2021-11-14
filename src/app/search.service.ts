@@ -10,8 +10,10 @@ export class SearchService {
 
   public baseUrl = "http://api.giphy.com/v1/gifs/search?api_key=Z9S507rSalhPEtvsnMrv5dOtTxSoE0Yu";
   public searchResults: any;
+  public tagsUrl = "http://api.giphy.com/v1/gifs/search/tags?api_key=Z9S507rSalhPEtvsnMrv5dOtTxSoE0Yu"
 
   constructor(private httpClient: HttpClient) { }
+
   
   //makes Http call to the API
 

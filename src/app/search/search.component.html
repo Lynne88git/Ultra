@@ -16,12 +16,16 @@
             <div class="repo" *ngFor="let result of paginationElements | paginate: {itemsPerPage: 9, currentPage: page}">
                 <div class="container">
                     <div class="row">
+                        <div class="col-12">
+                        <div class="col-sm">
                     <img class="p-2" loading="lazy" [attr.src]="result.images.original.url"
                     width="200"
                     height="auto"
                     alt="{{result.title}}"
                     />
-                    <p class="titleHeading">{{result.title}}</p>
+                    <p class="titleHeading w-100">{{result.title}}</p>
+                </div>
+                </div>
                 </div>
                 </div>
             </div>

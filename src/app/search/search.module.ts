@@ -6,6 +6,8 @@ import { SearchComponent } from "./search.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { NgxPaginationModule } from "ngx-pagination";
 
+
+
 @NgModule({
     imports: [
         SearchRoutingModule,
@@ -14,7 +16,7 @@ import { NgxPaginationModule } from "ngx-pagination";
         NgxPaginationModule
     ],
     declarations: [ 
-        SearchComponent 
+        SearchComponent
     ]
 })
 
