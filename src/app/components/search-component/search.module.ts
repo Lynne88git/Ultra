@@ -16,7 +16,8 @@ import { NgxPaginationModule } from "ngx-pagination";
         NgxPaginationModule
     ],
     declarations: [ 
-        SearchComponent
+        SearchComponent,
+     
     ]
 })
 

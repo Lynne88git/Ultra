@@ -7,18 +7,16 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
-
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule,
-    
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

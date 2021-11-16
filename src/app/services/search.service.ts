@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, empty } from 'rxjs';
@@ -8,11 +9,22 @@ import { map } from "rxjs/operators";
 })
 export class SearchService {
 
-  public baseUrl = "http://api.giphy.com/v1/gifs/search?api_key=Z9S507rSalhPEtvsnMrv5dOtTxSoE0Yu";
+  private apiKey = environment.apiKey;
+
+  public baseUrl = `http://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}`;
   public searchResults: any;
-  public tagsUrl = "http://api.giphy.com/v1/gifs/search/tags?api_key=Z9S507rSalhPEtvsnMrv5dOtTxSoE0Yu"
 
   constructor(private httpClient: HttpClient) { }
+
+  public searchByTags(term: any) {
+    let params = { q: term };
+    return this.httpClient.get(`http://api.giphy.com/v1/gifs/search/tags?api_key=${this.apiKey}`, { params }).pipe(
+      map(response => {
+        console.log(response);
+        return this.searchResults = response["data"];
+      })
+    );
+  }
 
   
   //makes Http call to the API
