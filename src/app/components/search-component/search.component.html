@@ -12,7 +12,7 @@
     </form>
 <!-- Search Tags -->
     <div>
-        <a *ngFor="let tag of tagsList" class="btn btn-light mx-2" (click)="onTagClick(tag.name)">{{ tag.name }}</a>
+        <a *ngFor="let tag of tagsList" class="btn btn-pink mx-2 my-2" (click)="onTagClick(tag.name)">{{ tag.name }}</a>
     </div>
 
     <div *ngIf="searchResults">

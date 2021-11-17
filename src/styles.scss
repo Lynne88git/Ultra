@@ -24,14 +24,14 @@ input[type='text'] {
   display: block;
   width: 70%;
   margin: 50px auto 0px auto;
-  min-width: 500px;
+  min-width: 100%;
   -webkit-box-shadow: 0px 10px 21px 0px rgba(214, 214, 214, 1);
   -moz-box-shadow: 0px 10px 21px 0px rgba(214, 214, 214, 1);
   box-shadow: 0px 10px 21px 0px rgba(214, 214, 214, 1);
 }
 
 .search-message {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgb(214, 214, 214);
   padding-top: 40px;
   margin: 0px;
@@ -111,6 +111,23 @@ input[type='text'] {
   left: 45px;
   animation: lds-ellipsis3 0.6s infinite;
 }
+.btn-pink {
+  color: #fff;
+  background-color: rgb(253, 85, 183) !important;
+  border-color: rgb(253, 85, 183) !important;
+}
+
+.btn-pink:hover {
+  color: #fff;
+  background-color: #cd4a96 !important;
+  border-color: #cd4a96 !important;
+}
+
+.ngx-pagination .current {
+  background: rgb(253, 85, 183) !important;
+  border-radius: 2px;
+}
+
 @keyframes lds-ellipsis1 {
   0% {
     transform: scale(0);
